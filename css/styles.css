@@ -188,3 +188,9 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+#boton-enviar {
+  background-color: grey;
+  margin-left: 46%;
+  margin-right: 46%;
+}
