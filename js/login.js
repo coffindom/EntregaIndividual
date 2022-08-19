@@ -3,9 +3,9 @@ function loginContent(){
     let contrasena = document.getElementById("contrasena").value;
     
     if (correo === "" || contrasena === ""){
-        showAlertError("Datos no válidos")
+        alert("Datos no válidos");
     } else {
-        document.location("index.html")
+        window.location = "categories.html"
     }
 }
 
