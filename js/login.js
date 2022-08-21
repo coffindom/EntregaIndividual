@@ -1,3 +1,9 @@
+// Función para ocultar el botón de inicio de sesión
+function hideLoginBtn(){
+    document.getElementById("loginBtn").style.display = "none";
+}
+
+// Función para controlar que no haya campos vacíos
 function loginContent(){
     let correo = document.getElementById("correo").value;
     let contrasena = document.getElementById("contrasena").value;
@@ -5,10 +11,12 @@ function loginContent(){
     if (correo === "" || contrasena === ""){
         alert("Datos no válidos");
     } else {
-        window.location.href = "categories.html"
+        window.location.href = "index.html";
+        hideLoginBtn();
     }
 }
 
+// Ejecución
 document.addEventListener("DOMContentLoaded", ()=>{
     document.getElementById("boton-enviar").addEventListener("click", ()=>{
         loginContent();
