@@ -6,13 +6,8 @@ function loginContent(){
     if (correo === "" || contrasena === ""){
         alert("Datos no válidos");
     } else {
-        window.location.href = "index.html"
+        window.location.href = "index.html";
     }
-}
-
-// Función para ocultar el botón de inicio de sesión
-function hideLoginBtn(){
-    document.getElementById("loginBtn").style.display = "none";
 }
 
 // Ejecución
