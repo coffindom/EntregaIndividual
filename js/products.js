@@ -1,3 +1,4 @@
+// Función que obtiene los datos del JSON y los coloca en un array
 document.addEventListener("DOMContentLoaded", ()=>{
     getJSONData(AUTOS).then(function(resultObj){
         if (resultObj.status === "ok"){
@@ -8,6 +9,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     })
 })
 
+// Función que muestra los datos del array en el HTML
 function showProductsList(array){
     let htmlContentToAppend = "";
 
@@ -24,7 +26,7 @@ function showProductsList(array){
                         <div class="mb-1">
                         <h4>`+ products.name +`</h4> 
                         <p> `+ products.description +`</p>
-                        <small class="text-muted">` + products.currency + products.cost + `</small>
+                        <small class="text-muted">` + products.currency + " " + products.cost + `</small>
                         </div>
                     </div>
                 </div>

@@ -189,6 +189,10 @@ a.custom-card:hover {
   color: orange;
 }
 
+#loginBtn {
+  color: #33da65;
+}
+
 #boton-enviar {
   background-color: grey;
   margin-left: 46%;
