@@ -6,7 +6,7 @@ function loginContent(){
     if (correo === "" || contrasena === ""){
         alert("Datos no válidos");
     } else {
-        window.location.href = "index.html";
+        window.location.href = "categories.html";
     }
 }
 
