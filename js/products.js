@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
         if (resultObj.status === "ok"){
             productsArray = resultObj.data.products
             showProductsList(productsArray)
-            //sortAndShowProducts(ORDER_ASC_BY_NAME, resultObj.data);
         }
     })
 })
