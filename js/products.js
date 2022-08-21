@@ -2,8 +2,8 @@
 document.addEventListener("DOMContentLoaded", ()=>{
     getJSONData(AUTOS).then(function(resultObj){
         if (resultObj.status === "ok"){
-            productsArray = resultObj.data.products
-            showProductsList(productsArray)
+            productsArray = resultObj.data.products;
+            showProductsList(productsArray);
         }
     })
 })
