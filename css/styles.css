@@ -190,11 +190,16 @@ a.custom-card:hover {
 }
 
 #loginBtn {
-  color: #33da65;
+  margin-top: 2%;
+}
+
+#logoutBtn {
+  margin-top: 4%;
 }
 
 #boton-enviar {
   background-color: grey;
   margin-left: 46%;
   margin-right: 46%;
+  border: 2px;
 }

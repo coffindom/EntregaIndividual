@@ -6,6 +6,7 @@ function loginContent(){
     if (correo === "" || contrasena === ""){
         alert("Datos no válidos");
     } else {
+        localStorage.setItem("correoname", correo);
         window.location.href = "index.html";
     }
 }
@@ -14,5 +15,5 @@ function loginContent(){
 document.addEventListener("DOMContentLoaded", ()=>{
     document.getElementById("boton-enviar").addEventListener("click", ()=>{
         loginContent();
-    })
+    });
 });

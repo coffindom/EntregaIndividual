@@ -31,17 +31,30 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
+            <button id="loginBtn"></button>
+          </li>
+          <li class="nav-item">
+            <button type="button" id="logoutBtn">Cerrar sesión</button>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+    <div class="container" id="productInfoContainer">
     </div>
+    <div class="container" id="commentsContainer">
+    </div>
+    <div class="container"><b>Comentar</b>
+      <br><textarea rows="6" cols="40" id="commentArea"></textarea>
+      <br>Puntuación <select id="pointSelector">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    <button type="button" id="submitCommentBtn">Enviar</button></div>
   </main>
   <footer class="text-muted">
     <div class="container">
