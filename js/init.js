@@ -45,40 +45,24 @@ document.addEventListener("DOMContentLoaded", ()=>{
   logoutBtnText(localStorage.getItem("correoname"));
 
   document.getElementById("logoutBtn").addEventListener("click", ()=>{
-    logoutBtnClick();
+    logout();
 });
 document.getElementById("loginBtn").addEventListener("click", ()=>{
     loginBtnClick(localStorage.getItem("correoname"));
 });
 });
 
-// Función que cambia el texto del botón Login
-function loginBtnText(elemento){
+// Función que modifica el menú desplegable según si la sesión está iniciada o no
+function dropdownText(elemento){
   if (elemento == undefined || elemento == null){
-      document.getElementById("loginBtn").innerHTML = `Iniciar sesión`;
+      document.getElementById("dropdownContent").innerHTML = `<button onclick="window.location.href = 'login.html'">Iniciar sesión</button>`;
   } else {
-      document.getElementById("loginBtn").innerHTML = elemento
+      document.getElementById("dropdownMenuButton1").innerHTML = elemento;
   }
 }
 
-// Función que hace desaparecer el botón de cerrar sesión
-function logoutBtnText(elemento){
-  if (elemento == undefined || elemento == null){
-      document.getElementById("logoutBtn").style.display = "none"
-  }
-}
-
-// Función de click del botón Login
-function loginBtnClick(elemento){
-  if (elemento == undefined || elemento == null){
-      window.location.href = "login.html";
-  } else {
-      window.location.href = "my-profile.html";
-  }
-}
-
-// Función de click del botón de cierre de sesión
-function logoutBtnClick(){
+// Función para cerrar la sesión
+function logout(){
   localStorage.removeItem("correoname");
   location.reload();
 }

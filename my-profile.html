@@ -44,11 +44,17 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
-            <button id="loginBtn"></button>
-          </li>
-          <li class="nav-item">
-            <button type="button" id="logoutBtn">Cerrar sesión</button>
+          <li id="dropdownContent">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+                <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+                <li><button class="dropdown-item" onclick="logout()">Cerrar sesión</button></li>
+              </ul>
+            </div>
           </li>
         </ul>
       </div>

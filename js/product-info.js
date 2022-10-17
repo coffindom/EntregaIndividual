@@ -5,11 +5,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
         let productoLink = "https://japceibal.github.io/emercado-api/products/" + productID + ".json";
         let commentsLink = "https://japceibal.github.io/emercado-api/products_comments/" + productID + ".json";
         commentsArray = [];
+        infoArray = [];
 
         getJSONData(productoLink).then(function(resultObj){
             if (resultObj.status === "ok"){
                 infoArray = resultObj.data;
                 showProductInfo(infoArray);
+                showRelatedProducts(infoArray.relatedProducts);
             } else {
                 alert("Error");
             }
@@ -27,7 +29,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
         document.getElementById("submitCommentBtn").addEventListener("click", ()=>{
             submitComment(commentsArray);
         });
-
     } else {
         window.location.href = "categories.html"
     }
@@ -78,7 +79,7 @@ function showStars(score){
         if (score>=i){
            addScore +=  `★`; 
         } else {
-            addScore += `☆`;
+           addScore += `☆`;
         }
     }
     return addScore;
@@ -101,4 +102,25 @@ function submitComment(array){
         showProductComments(array);
         document.getElementById("commentArea").value = ``;
     }
+}
+
+// Función que muestra productos relacionados
+function showRelatedProducts(array){
+    htmlContentToAppend = "";
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        htmlContentToAppend += `<div class="card cursor-active" style="width: 12rem; margin-right: 10px;" onclick="changeProdID(${element.id})"><img src="${element.image}" class="card-img-top">
+        <div class="card-body"><p class="card-text">${element.name}</p></div>
+        </div>`
+    }
+    document.getElementById("relatedProductsContainer").innerHTML += htmlContentToAppend;
+}
+
+// Función que redirige al usuario al producto seleccionado
+function changeProdID(id) {
+    if (localStorage.getItem("prodID") != null || localStorage.getItem("prodID") != undefined){
+        localStorage.removeItem("prodID");
+    }
+    localStorage.setItem("prodID", id);
+    location.reload();
 }

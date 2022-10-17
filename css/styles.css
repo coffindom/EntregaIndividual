@@ -189,17 +189,6 @@ a.custom-card:hover {
   color: orange;
 }
 
-#loginBtn {
-  margin-top: 2%;
-}
-
-#logoutBtn {
-  margin-top: 4%;
-}
-
-#boton-enviar {
-  background-color: grey;
-  margin-left: 46%;
-  margin-right: 46%;
-  border: 2px;
+#dropdownContent {
+  margin-top: 0.3%;
 }
