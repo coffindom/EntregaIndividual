@@ -41,15 +41,7 @@ let getJSONData = function(url){
 }
 
 document.addEventListener("DOMContentLoaded", ()=>{
-  loginBtnText(localStorage.getItem("correoname"));
-  logoutBtnText(localStorage.getItem("correoname"));
-
-  document.getElementById("logoutBtn").addEventListener("click", ()=>{
-    logout();
-});
-document.getElementById("loginBtn").addEventListener("click", ()=>{
-    loginBtnClick(localStorage.getItem("correoname"));
-});
+  dropdownText(localStorage.getItem("correoname"));
 });
 
 // Función que modifica el menú desplegable según si la sesión está iniciada o no
