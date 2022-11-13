@@ -99,10 +99,16 @@ function costChange(){
     } else if (document.getElementById("pago1").checked){
         if (document.getElementById("numeroTarjeta").value === "" || document.getElementById("numerotarjeta2").value === "" || document.getElementById("fechaTarjeta").value === ""){
             document.getElementById("validacion4").style.display = "block";            
+        } else {
+            document.getElementsByName("validaciones").style.display = "none";
+            document.getElementById("validacion5").style.display = "block";
         }
     } else if (document.getElementById("pago2").checked){
         if (document.getElementById("numeroBanco").value === ""){
             document.getElementById("validacion4").style.display = "block";
+        } else {
+            document.getElementsByName("validaciones").style.display = "none";
+            document.getElementById("validacion5").style.display = "block";
         }
     } else {
         document.getElementById("validacion5").style.display = "block"

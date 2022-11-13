@@ -62,9 +62,13 @@
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+      <h1>Perfil</h1><hr>
+      <input required type="text" name="" id="primerNombre" placeholder="Primer nombre"> <input type="text" name="" id="segundoNombre" placeholder="Segundo nombre"><br><br>
+      <input required type="text" name="" id="primerApellido" placeholder="Primer apellido"> <input type="text" name="" id="segundoApellido" placeholder="Segundo apellido"><br><br>
+      <input required type="email" name="" id="correoPerfil" placeholder="Correo elecontrónico"> <input type="tel" name="" id="numeroTelefono" placeholder="Número de teléfono"><br><br>
+      <span style="display: none; color: red;" id="profileValidationSpan">Los campos de "Primer Nombre", "Apellido" y "Correo" son obligatorios<br></span>
+      <span style="display: none; color: green;" id="profileValidationSpan2">Perfil guardado<br></span>
+      <button class="btn btn-primary" id="enviarBtnProfile">Guardar cambios</button><hr>
     </div>
   </main>
   <footer class="text-muted">
