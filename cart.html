@@ -58,17 +58,54 @@
         <th>Subtotal</th>
       </tr>
       </thead>
-    </table></div>
+    </table><b>Precio final (Productos + Envío):</b> <span id="subtotalSpan"></span><hr></div>
     <div class="container">
       <h5><b>Tipo de envío</b></h5>
-      <input type="radio" name="envio">Premium 2 a 5 días 15%<br>
-      <input type="radio" name="envio">Express 5 a 8 días 7%<br>
-      <input type="radio" name="envio">Standard 12 a 15 días 5%<br>
+      <input type="radio" name="envio" value="0.03" id="radio1">Premium 2 a 5 días 15%<br>
+      <input type="radio" name="envio" value="0.07" id="radio2">Express 5 a 8 días 7%<br>
+      <input type="radio" name="envio" value="0.15" id="radio3">Standard 12 a 15 días 5%<br>
       <br>
-      Calle <input type="text"><br>
-      Número <input type="text"><br>
-      Esquina <input type="text">
+      Calle <input type="text" id="calle"><br>
+      Número <input type="text" id="direccionNumero"><br>
+      Esquina <input type="text" id="esquina"><br>
+
+      <!-- Botón de modal -->
+    <button style="color: blue;" type="button" id="paymentButton" class="btn btn" data-bs-toggle="modal" data-bs-target="#modal1">
+      Seleccionar método de pago
+    </button><br><br>
+    <span id="validacion1" name="validaciones" style="color: red; display: none;">Asegurate de que todos los campos de dirección esten llenos<br></span>
+    <span id="validacion2" name="validaciones" style="color: red; display: none;">Selecciona un tipo de envío<br></span>
+    <span id="validacion3" name="validaciones" style="color: red; display: none;">Asegurate de que la cantidad de artículos que estás comprando es mayor a cero<br></span>
+    <span id="validacion4" name="validaciones" style="color: red; display: none;">Método de pago inválido<br></span>
+    <span id="validacion5" style="color: green; display: none;">Compra realizada con éxito<br></span>
+    <button type="button" class="btn btn-primary" id="finalizarBoton">Finalizar la compra</button>
     </div>
+
+<!-- Modal -->
+<div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Métodos de pago</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type="radio" name="pagos" id="pago1"> Tarjeta de crédito<hr>
+        <div style="display: none;" id="pago1div">
+        <input type="text" id="numeroTarjeta" placeholder="Número de tarjeta"> <input type="text" id="numeroTarjeta2" placeholder="Código de serguridad"><br>
+        <input type="text" id="fechaTarjeta" placeholder="Fecha de expiración (DD/MM/AA)" style="margin-top: 3px;">
+        </div><br>
+        <input type="radio" name="pagos" id="pago2"> Transferencia bancaria<hr>
+        <div style="display: none;" id="pago2div">
+        <input type="text" id="numeroBanco" placeholder="Número de cuenta">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="saveButton">Guardar y cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
   </main>
   <footer class="text-muted">
     <div class="container">
